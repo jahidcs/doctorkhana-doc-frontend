@@ -1,5 +1,6 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import Contact from './components/pages/Contact'
+import Dashboard from './components/pages/Dashboard'
 import Home from './components/pages/Home'
 import Layout from './components/pages/Layout'
 import LoginReg from './components/pages/auth/LoginReg'
@@ -18,6 +19,8 @@ function App() {
                         <Route path="forgotpass" element={<SendPasswordResetEmail />} />
                         <Route path="reset" element={<ResetPassword />} />
                     </Route>
+                    <Route path="/dashboard" element={<Dashboard />} />
+                    <Route path="*" element={<h1>Error 404 Page not found !!</h1>} />
                 </Routes>
             </BrowserRouter>
         </>
