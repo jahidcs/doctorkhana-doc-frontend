@@ -1,6 +1,5 @@
 import { Button, CssBaseline, Grid, Typography } from '@mui/material'
 import { useNavigate } from 'react-router-dom'
-// import ChangePassword from './auth/ChangePassword'
 import ResetPassword from './auth/PasswordReset'
 
 const Dashboard = () => {
