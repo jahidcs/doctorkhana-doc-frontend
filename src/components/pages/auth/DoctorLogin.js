@@ -20,7 +20,7 @@ const DoctorLogin = () => {
         }
         if (actualData.email && actualData.password) {
             setError({ status: true, msg: 'login succeed', type: 'success' })
-            navigate('/')
+            navigate('/dashboard')
         } else {
             setError({ status: true, msg: 'All fields are required', type: 'error' })
         }
