@@ -1,7 +1,10 @@
 import { AppBar, Box, Toolbar, Typography, Button } from '@mui/material'
 import { NavLink } from 'react-router-dom'
+import Dashboard from '../pages/Dashboard'
+import { getToken } from '../services/LocalStorageService'
 
 const Navbr = () => {
+    const { access_token } = getToken()
     return (
         <>
             <Box sx={{ flexGrow: 1 }}>
@@ -28,15 +31,27 @@ const Navbr = () => {
                             sx={{ color: 'white', textTransform: 'none' }}>
                             Contact
                         </Button>
-                        <Button
-                            component={NavLink}
-                            to="/auth"
-                            style={({ isActive }) => {
-                                return { backgroundColor: isActive ? '#81d4fa' : '' }
-                            }}
-                            sx={{ color: 'white', textTransform: 'none' }}>
-                            Login / Registration
-                        </Button>
+                        {access_token ? (
+                            <Button
+                                component={NavLink}
+                                to="/dashboard"
+                                style={({ isActive }) => {
+                                    return { backgroundColor: isActive ? '#81d4fa' : '' }
+                                }}
+                                sx={{ color: 'white', textTransform: 'none' }}>
+                                Dashboard
+                            </Button>
+                        ) : (
+                            <Button
+                                component={NavLink}
+                                to="/auth"
+                                style={({ isActive }) => {
+                                    return { backgroundColor: isActive ? '#81d4fa' : '' }
+                                }}
+                                sx={{ color: 'white', textTransform: 'none' }}>
+                                Login / Registration
+                            </Button>
+                        )}
                     </Toolbar>
                 </AppBar>
             </Box>
