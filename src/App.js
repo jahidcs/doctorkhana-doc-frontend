@@ -1,6 +1,6 @@
 import { useSelector } from 'react-redux'
 import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom'
-import { DashboardPage, ProfilePage, SettingsPage, AppointmentDetailsPage } from './pages'
+import { DashboardPage, ProfilePage, SettingsPage, AppointmentDetailsPage, Landing } from './pages'
 // import Contact from './pages/Contact'
 // import Dashboard from './pages/Dashboard'
 // import Home from './pages/Home'
@@ -15,11 +15,13 @@ function App() {
         <>
             <BrowserRouter>
                 <Routes>
-                    <Route path="/auth" element={<Layout />}>
+                    {/* <Route path="/" element={<Layout />}>
                         <Route path="auth" element={!access_token ? <LoginReg /> : <Navigate to="/dash" />} />
                         <Route path="forgotpass" element={<SendPasswordResetEmail />} />
-                        {/* <Route path="reset" element={<ResetPassword />} /> */}
-                    </Route>
+                    </Route> */}
+                    <Route path="/" element={<Landing />}></Route>
+                    <Route path="auth" element={!access_token ? <LoginReg /> : <Navigate to="/dash" />} />
+                    <Route path="forgotpass" element={<SendPasswordResetEmail />} />
                     <Route path="/dash" element={access_token ? <DashboardPage /> : <Navigate to="/auth" />} />
                     <Route path="/profile" element={access_token ? <ProfilePage /> : <Navigate to="/auth" />} />
                     <Route path="/settings" element={access_token ? <SettingsPage /> : <Navigate to="/auth" />} />
