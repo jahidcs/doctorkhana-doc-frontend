@@ -1,0 +1,67 @@
+.landingContainer {
+    background-image: url('../../assets/images/land.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 100vh;
+}
+
+.landingCard {
+    color: var(--white);
+    position: relative;
+    text-align: center;
+}
+
+.roleCard {
+    position: absolute;
+    width: 30%;
+    background: rgb(50, 160, 170, 0.5);
+    top: 25%;
+    left: 60%;
+    border-radius: 10px;
+    animation: top-bottom 1000ms;
+}
+
+@keyframes top-bottom {
+    0% {
+        top: 0%;
+    }
+    100% {
+        top: 25%;
+    }
+}
+
+.roleCard .Content {
+    text-align: center;
+    line-height: 2;
+    padding: 40px 0;
+}
+.title {
+    font-size: 25px;
+    width: 800;
+    color: var(--white);
+}
+
+.Content .Option {
+    color: var(--white);
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.Option span {
+    background: none;
+    border: 1px solid var(--secondary-accent);
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.Option span:hover {
+    background: var(--secondary-accent);
+    border: 1px solid var(--secondary-accent);
+}
+
+span a {
+    text-decoration: none;
+    color: var(--white);
+}
