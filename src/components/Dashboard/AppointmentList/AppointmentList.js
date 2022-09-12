@@ -30,6 +30,7 @@ const AppointmentList = () => {
         } catch (e) {}
     }, [api, access_token])
     let data = Array.from(appointments)
+    console.log(data)
     return (
         <div className={classes.listContainer}>
             <h2>Appointments</h2>
@@ -56,7 +57,7 @@ const AppointmentList = () => {
                                 return (
                                     <tr key={index}>
                                         <td>{appointment.appointment_id}</td>
-                                        <td>{appointment.patient_id}</td>
+                                        <td>{appointment.pat_id}</td>
                                         <td>{appointment.reason}</td>
                                         <td className={appointment.is_completed ? `${classes.yes}` : `${classes.no}`}>
                                             {appointment.is_completed ? 'Completed' : 'Incomplete'}
