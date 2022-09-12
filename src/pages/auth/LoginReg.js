@@ -8,7 +8,7 @@ const TabPanel = (props) => {
     const { children, value, index } = props
     return (
         <div role="tabpanel" hidden={value !== index}>
-            {value == index && <Box>{children}</Box>}
+            {value === index && <Box>{children}</Box>}
         </div>
     )
 }

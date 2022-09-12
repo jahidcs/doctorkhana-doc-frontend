@@ -35,7 +35,7 @@ const DoctorLogin = () => {
             let { access_token } = getToken()
             dispatch(setUserToken({ access_token: access_token }))
             setError({ status: true, msg: `${res.data.message}`, type: 'success' })
-            navigate('/dashboard')
+            navigate('/dash')
         }
     }
 

@@ -1,0 +1,13 @@
+.Container {
+    margin: 20px 20px 20px 10px;
+    display: grid;
+    grid-template-columns: minmax(0, 45%) minmax(0, 55%);
+}
+
+.Appointment {
+    width: 100%;
+}
+
+.Schedule {
+    width: 100%;
+}

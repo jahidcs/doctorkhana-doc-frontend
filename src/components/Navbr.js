@@ -13,7 +13,7 @@ const Navbr = () => {
                         <Typography variant="h5" component="div" sx={{ flexGrow: 1 }}>
                             DoctorKhana
                         </Typography>
-                        <Button
+                        {/* <Button
                             component={NavLink}
                             to="/"
                             style={({ isActive }) => {
@@ -30,11 +30,11 @@ const Navbr = () => {
                             }}
                             sx={{ color: 'white', textTransform: 'none' }}>
                             Contact
-                        </Button>
+                        </Button> */}
                         {access_token ? (
                             <Button
                                 component={NavLink}
-                                to="/dashboard"
+                                to="/dash"
                                 style={({ isActive }) => {
                                     return { backgroundColor: isActive ? '#81d4fa' : '' }
                                 }}

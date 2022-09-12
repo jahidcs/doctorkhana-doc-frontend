@@ -41,7 +41,41 @@ export const userAuthApi = createApi({
                 }
             },
         }),
+
+        scheduleSet: builder.mutation({
+            query: ({ actualData, access_token }) => {
+                return {
+                    url: 'schedule/',
+                    method: 'POST',
+                    body: actualData,
+                    headers: {
+                        'Content-type': 'application/json',
+                        authorization: `Bearer ${access_token}`,
+                    },
+                }
+            },
+        }),
+
+        makeComment: builder.mutation({
+            query: ({ appointmentId, actualData, access_token }) => {
+                return {
+                    url: `comment/${appointmentId}/`,
+                    method: 'PUT',
+                    body: actualData,
+                    headers: {
+                        'Content-type': 'application/json',
+                        authorization: `Bearer ${access_token}`,
+                    },
+                }
+            },
+        }),
     }),
 })
 
-export const { useRegisterUserMutation, useLoginUserMutation, useUserProfileQuery } = userAuthApi
+export const {
+    useRegisterUserMutation,
+    useLoginUserMutation,
+    useUserProfileQuery,
+    useScheduleSetMutation,
+    useMakeCommentMutation,
+} = userAuthApi
