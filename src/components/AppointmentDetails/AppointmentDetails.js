@@ -11,9 +11,10 @@ const AppointmentDetails = () => {
 
     const { access_token } = getToken()
     const api = 'http://127.0.0.1:8000/api/patient'
-    const patientId = location.state.patient_id
+    const patientId = location.state.pat_id
     const scheduleId = location.state.schedule_id
     const appointmentId = location.state.appointment_id
+    console.log('patient', patientId)
 
     const [patient, setPatient] = useState('')
     const [day, setDay] = useState('')
@@ -106,7 +107,7 @@ const AppointmentDetails = () => {
 
                 <p>
                     <span className={classes.key}>Appointed Patient/ID </span>
-                    <span>{patient ? `${patient}` : `${location.state.patient_id}`} </span>
+                    <span>{patient ? `${patient}` : `${location.state.pat_id}`} </span>
                 </p>
 
                 <p>
